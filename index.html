@@ -45,7 +45,11 @@ button:focus-visible{outline:3px solid var(--ink); outline-offset:3px}
 
 <script>
 const emojis = ["😘", "💋", "❤️", "💖", "💕"];
+const sonido = new Audio("beso.mp3");
+
 document.getElementById("b").addEventListener("click", () => {
+  sonido.currentTime = 0;
+  sonido.play();
   if (navigator.vibrate) navigator.vibrate(60);
   for (let i = 0; i < 25; i++) {
     const s = document.createElement("span");
